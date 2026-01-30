@@ -316,3 +316,20 @@ h2 {
     transform: scale(1.05);
     background: var(--secondary-color);
 } 
+/* Valentine Photo Styles */
+.valentine-photo {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.valentine-photo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.valentine-photo img:hover {
+    transform: scale(1.05);
+}
