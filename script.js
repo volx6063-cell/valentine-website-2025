@@ -83,7 +83,8 @@ window.addEventListener('DOMContentLoaded', () => {
     // Setup music player
     setupMusicPlayer();
 });
-
+// Setup photo display
+setupPhoto();
 // Create floating hearts and bears
 function createFloatingElements() {
     const container = document.querySelector('.floating-elements');
@@ -240,3 +241,50 @@ function setupMusicPlayer() {
         }
     });
 } 
+// Photo Display Setup
+function setupPhoto() {
+    if (!config.photo || !config.photo.enabled) {
+        return;
+    }
+
+    const titlePhoto = document.getElementById('titlePhoto');
+    const titlePhotoImg = document.getElementById('titlePhotoImg');
+    const celebrationPhoto = document.getElementById('celebrationPhoto');
+    const celebrationPhotoImg = document.getElementById('celebrationPhotoImg');
+
+    // Set photo source and alt text
+    titlePhotoImg.src = config.photo.photoFileName;
+    titlePhotoImg.alt = config.photo.altText;
+    celebrationPhotoImg.src = config.photo.photoFileName;
+    celebrationPhotoImg.alt = config.photo.altText;
+
+    // Set photo width
+    if (config.photo.width) {
+        titlePhotoImg.style.width = config.photo.width;
+        celebrationPhotoImg.style.width = config.photo.width;
+    }
+
+    // Show photo on specified pages
+    if (config.photo.showOnPage === 'title' || config.photo.showOnPage === 'both') {
+        titlePhoto.classList.remove('hidden');
+    }
+    if (config.photo.showOnPage === 'celebration' || config.photo.showOnPage === 'both') {
+        celebrationPhoto.classList.remove('hidden');
+    }
+}
+```
+
+---
+
+## 5. File Structure
+
+Make sure your folder looks like this:
+```
+your-folder/
+├── index.html
+├── config.js
+├── script.js
+├── styles.css
+├── theme.js
+├── DSC00222.JPG  ← Your photo HERE (same folder)
+└── README.md
