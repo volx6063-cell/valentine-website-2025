@@ -17,7 +17,14 @@ const CONFIG = {
         hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis
         bears: ['🧸', '🐻']                       // Cute bear emojis
     },
-
+// Photo Settings
+photo: {
+    enabled: true,                     // Set to true to show your photo
+    photoFileName: "DSC00222.JPG",     // Your photo filename
+    altText: "Our special moment",     // Description of the photo
+    showOnPage: "celebration",         // Options: "title", "celebration", or "both"
+    width: "300px"                     // Photo size
+},
     // Questions and answers
     // Customize each question and its possible responses
     questions: {
